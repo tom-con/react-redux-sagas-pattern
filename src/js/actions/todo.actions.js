@@ -2,9 +2,9 @@ export const CREATE_TODO_REQUESTED = 'create_todo_requested';
 export const CREATE_TODO_SUCCEEDED = 'create_todo_succeeded';
 export const CREATE_TODO_FAILED = 'create_todo_failed';
 
-export const COMPLETE_TODO_REQUESTED = 'complete_todo_requested';
-export const COMPLETE_TODO_SUCCEEDED = 'complete_todo_succeeded';
-export const COMPLETE_TODO_FAILED = 'complete_todo_failed';
+export const UPDATE_TODO_REQUESTED = 'update_todo_requested';
+export const UPDATE_TODO_SUCCEEDED = 'update_todo_succeeded';
+export const UPDATE_TODO_FAILED = 'update_todo_failed';
 
 
 export const createTodoReq = text => ({
@@ -12,7 +12,7 @@ export const createTodoReq = text => ({
   payload: text,
 })
 
-export const completeTodoReq = id => ({
-  type: COMPLETE_TODO_REQUESTED,
-  payload: id,
+export const updateTodoReq = (id, isComplete) => ({
+  type: UPDATE_TODO_REQUESTED,
+  payload: { id, isComplete }
 })

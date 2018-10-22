@@ -4,10 +4,11 @@ import { withRouter } from 'react-router-dom'
 
 import { 
   createTodoReq as createTodo, 
-  completeTodoReq as completeTodo 
+  updateTodoReq as updateTodo
 } from '../../actions/todo.actions'
 import Page from '../layout/page.presenter';
 import ToDoInput from './todoInput.presenter';
+import ToDoList from './todoList.presenter';
 
 class ToDoContainer extends Component {
   constructor(props){
@@ -17,12 +18,27 @@ class ToDoContainer extends Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTodoStateChange = this.handleTodoStateChange.bind(this);
+    this.renderLoading = this.renderLoading.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createToDo(this.state.inputText);
+    this.props.createTodo(this.state.inputText);
     this.setState({ inputText: '' })
+  }
+
+  handleTodoStateChange(id, isChecked) {
+    this.props.updateTodo(id, isChecked);
+  }
+
+  renderLoading() {
+    const { showLoading, loadingMessage } = this.props;
+    if(showLoading){
+      return (
+        <div>{loadingMessage}</div>
+      )
+    }
   }
 
   render() {
@@ -36,13 +52,20 @@ class ToDoContainer extends Component {
           handleChange={text => this.setState({ inputText: text })}
           handleSubmit={this.handleSubmit}
         />
+        <ToDoList
+          todos={this.props.incompleteTodos}
+          handleChange={this.handleTodoStateChange}
+        />
+        {this.renderLoading()}
       </Page>
     );
   }
 }
 
 const mapStateToProps = ({ todoStore }) => {
-  return { todoStore }
+  const incompleteTodos = todoStore.todos.filter(td => !td.isComplete)
+  const { showLoading, loadingMessage } = todoStore;
+  return { incompleteTodos, showLoading, loadingMessage }
 }
 
-export default withRouter(connect(mapStateToProps, { createTodo, completeTodo })(ToDoContainer));
+export default withRouter(connect(mapStateToProps, { createTodo, updateTodo })(ToDoContainer));

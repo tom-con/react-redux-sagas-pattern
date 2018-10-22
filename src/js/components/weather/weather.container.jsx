@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 
-import { getWeather, deleteWeather } from '../actions';
-import Page from './layout/page.presenter';
+// import { getWeatherReq as getWeather, deleteWeatherReq as delWeather } from '../actions/weather.actions';
+import Page from '../layout/page.presenter';
 
 class WeatherContainer extends Component {
   render() {
@@ -21,4 +21,4 @@ const mapStateToProps = ({ weatherStore }) => {
   return { weatherStore }
 }
 
-export default withRouter(connect(mapStateToProps, { getWeather, deleteWeather })(WeatherContainer));
+export default withRouter(connect(mapStateToProps, { })(WeatherContainer));
