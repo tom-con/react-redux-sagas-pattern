@@ -7,6 +7,7 @@ import {
 } from '../../actions/todo.actions'
 import Page from '../layout/page.presenter';
 import ToDoList from '../todo/todoList.presenter';
+import Tagline from './tagline.presenter';
 
 class ProgressContainer extends Component {
 
@@ -31,12 +32,21 @@ class ProgressContainer extends Component {
   }
 
   render() {
+    const { completeTodos } = this.props;
+
+    const taglineText = completeTodos.length > 0 ?
+      `You have completed ${completeTodos.length} tasks!` :
+      'You haven\'t completed any tasks yet!'
+
     return (
       <Page
         title="Progress"
       >
+        <Tagline 
+          text={taglineText}
+        />
         <ToDoList
-          todos={this.props.completeTodos}
+          todos={completeTodos}
           handleChange={this.handleTodoStateChange}
         />
         {this.renderLoading()}

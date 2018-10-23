@@ -16,12 +16,12 @@ const TodoItem = ({ taskId, taskName, isComplete, handleChange }) => {
       <label
         style={style}
       >
-        {taskName}
         <input 
           type="checkBox"
           checked={isComplete}
           readOnly
         />
+        {taskName}
       </label>
     </div>
   )

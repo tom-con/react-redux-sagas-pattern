@@ -1,4 +1,4 @@
-import { put, call, apply } from 'redux-saga/effects'
+import { put, call } from 'redux-saga/effects'
 
 import {
   CREATE_TODO_SUCCEEDED, 
@@ -27,7 +27,7 @@ async function update(task) {
   return task
 }
 
-export function* createTodo(action){
+export function* createTodo(action) {
     try {
         let data = yield call(create, action.payload);
         yield put({

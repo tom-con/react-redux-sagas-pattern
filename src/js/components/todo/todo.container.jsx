@@ -7,7 +7,7 @@ import {
   updateTodoReq as updateTodo
 } from '../../actions/todo.actions'
 import Page from '../layout/page.presenter';
-import ToDoInput from './todoInput.presenter';
+import ToDoInput from '../common/input.presenter';
 import ToDoList from './todoList.presenter';
 
 class ToDoContainer extends Component {

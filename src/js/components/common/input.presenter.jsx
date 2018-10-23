@@ -1,9 +1,15 @@
 import React from 'react';
 
-const TodoInput = ({ buttonText, handleChange, handleSubmit }) => {
+const input = ({ buttonText, handleChange, handleSubmit }) => {
+
+  const style = {
+    margin: '10px 0px'
+  };
 
   return (
-      <div>
+      <div
+        style={style}
+      >
         <input
           type="text"
           onChange={e => handleChange(e.target.value)}
@@ -17,4 +23,4 @@ const TodoInput = ({ buttonText, handleChange, handleSubmit }) => {
   )
 }
 
-export default TodoInput
+export default input
