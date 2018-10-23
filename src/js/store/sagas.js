@@ -1,17 +1,16 @@
 import { takeEvery, all } from 'redux-saga/effects';
 
-import { createTodo, updateTodo } from './todo.sagas';
-import { getWeather } from './weather.sagas';
+import { createTodo, updateTodo } from '../components/todo/todo.sagas';
+import { getWeather } from '../components/weather/weather.sagas';
 
 import { 
   CREATE_TODO_REQUESTED, 
   UPDATE_TODO_REQUESTED,  
-} from '../actions/todo.actions'
+} from '../components/todo/todo.actions'
 
 import { 
   GET_WEATHER_REQUESTED, 
-
-} from '../actions/weather.actions'
+} from '../components/weather/weather.actions'
 
 function* rootSaga() {
   try {

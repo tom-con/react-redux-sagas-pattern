@@ -3,7 +3,7 @@ import {
   GET_WEATHER_REQUESTED, 
   GET_WEATHER_SUCCEEDED, 
   GET_WEATHER_FAILED,
-} from '../actions/weather.actions'
+} from './weather.actions'
 
 export const INITIAL_STATE = {
     cities: [],

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 
-import { getWeatherReq as getWeather } from '../../actions/weather.actions';
+import { getWeatherReq as getWeather } from './weather.actions';
 import Page from '../layout/page.presenter';
 import WeatherInput from '../common/input.presenter';
 import { WeatherList } from './weatherList.presenter';

@@ -21,8 +21,8 @@ import {REDUX_PERSIST as PersistConfig, checkVersion} from "./ReduxPersist"
  *
  */
 
-import rootSaga from '../sagas'
-import reducers from '../reducers/index'
+import rootSaga from '../store/sagas'
+import reducers from '../store/reducers'
 
 const configureStore = (rootReducer, rootSaga) => {
     /* ------------ Redux Configuration ------------ */

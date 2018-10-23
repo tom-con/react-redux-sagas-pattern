@@ -4,9 +4,10 @@ import { withRouter } from 'react-router-dom';
 
 import {  
   updateTodoReq as updateTodo
-} from '../../actions/todo.actions'
+} from './todo.actions'
+
 import Page from '../layout/page.presenter';
-import ToDoList from '../todo/todoList.presenter';
+import ToDoList from './todoList.presenter';
 import Tagline from './tagline.presenter';
 
 class ProgressContainer extends Component {

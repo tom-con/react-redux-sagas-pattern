@@ -5,7 +5,7 @@ import {
   CREATE_TODO_FAILED,
   UPDATE_TODO_SUCCEEDED, 
   UPDATE_TODO_FAILED 
-} from "../actions/todo.actions"
+} from "./todo.actions"
 
 async function wait(ms) {
   return new Promise(resolve => {

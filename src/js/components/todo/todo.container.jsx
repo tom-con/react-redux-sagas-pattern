@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom'
 import { 
   createTodoReq as createTodo, 
   updateTodoReq as updateTodo
-} from '../../actions/todo.actions'
+} from './todo.actions'
 import Page from '../layout/page.presenter';
 import ToDoInput from '../common/input.presenter';
 import ToDoList from './todoList.presenter';

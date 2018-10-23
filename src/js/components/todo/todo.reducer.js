@@ -6,7 +6,7 @@ import {
   UPDATE_TODO_REQUESTED, 
   UPDATE_TODO_SUCCEEDED, 
   UPDATE_TODO_FAILED  
-} from '../actions/todo.actions'
+} from './todo.actions'
 
 export const INITIAL_STATE = {
     todos: [],

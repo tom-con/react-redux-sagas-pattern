@@ -5,7 +5,7 @@ import { PersistGate } from 'redux-persist/es/integration/react';
 
 import createStore from './config/ReduxStore';
 import ToDoContainer from './components/todo/todo.container';
-import ProgressContainer from './components/progress/progress.container';
+import ProgressContainer from './components/todo/progress.container';
 import WeatherContainer from './components/weather/weather.container';
 
 const { persistor, store } = createStore();

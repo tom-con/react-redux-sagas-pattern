@@ -1,11 +1,11 @@
 import { put, call } from 'redux-saga/effects'
 
-import { getCityWeather } from '../lib/openweather';
+import { getCityWeather } from '../../lib/openweather';
 
 import {
   GET_WEATHER_SUCCEEDED,
   GET_WEATHER_FAILED,
-} from "../actions/weather.actions"
+} from "./weather.actions"
 
 export function* getWeather(action) {
     try {
